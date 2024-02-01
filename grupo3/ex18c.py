@@ -11,14 +11,14 @@ class Fornecedor(Pessoa):
         return (f"Fornecedor(nome='{self.get_nome()}', endereco='{self.get_endereco()}', telefone='{self.get_telefone()}', "
                 f"valor_credito={self.__valor_credito}, valor_divida={self.__valor_divida})")
     
-    # Getters
+   
     def get_valor_credito(self):
         return self.__valor_credito
 
     def get_valor_divida(self):
         return self.__valor_divida
 
-    # Setters
+
     def set_valor_credito(self, valor_credito):
         self.__valor_credito = valor_credito
 

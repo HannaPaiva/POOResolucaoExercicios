@@ -3,7 +3,7 @@ def fibonacci(n):
     serie = [1, 1]
 
     while len(serie) < n:
-        termo_atual = serie[-1] + serie[-2]
+        termo_atual = serie[-1] + serie[-2] 
         serie.append(termo_atual)
 
     return serie[:n]

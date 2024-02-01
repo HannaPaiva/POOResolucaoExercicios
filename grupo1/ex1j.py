@@ -19,7 +19,7 @@ def calcular_tinta_e_preco(metros_quadrados):
     litros_necessarios = metros_quadrados / cobertura_por_litro
 
 
-    latas_necessarias = math.ceil(litros_necessarios / 18) #menor número inteiro maior ou igual ao número passado como argumento. 
+    latas_necessarias = math.ceil(litros_necessarios / 18) #menor número inteiro maior ou igual ao número
 
     preco_total = latas_necessarias * 80
 

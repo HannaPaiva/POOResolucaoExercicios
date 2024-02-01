@@ -4,7 +4,7 @@ def contar_espacos_vogais(frase):
 
     print(f"(a) Quantidade de espaços em branco: {qtd_espacos}")
 
-    # (b) Contar frequência das vogais a, e, i, o, u
+    # (b) Contar frequência qtas vezes aparece cada vogal
     frequencia_vogais = {
         'a': frase.count('a'),
         'e': frase.count('e'),
@@ -18,6 +18,6 @@ def contar_espacos_vogais(frase):
         print(f"{vogal}: {frequencia}")
 
 # Exemplo de uso
-frase_exemplo = "Dada uma string, conte: (a) quantos espaços em branco existem na frase. (b) quantas vezes aparecem as vogais a, e, i, o, u."
+frase_exemplo = "a"
 
 contar_espacos_vogais(frase_exemplo)

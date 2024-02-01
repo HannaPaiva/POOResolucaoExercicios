@@ -1,0 +1,23 @@
+-- (i) SELECT * FROM produtos ORDER BY PreçoUnitário ASC
+
+-- (iv) SELECT c.*, p.* FROM categorias c
+
+-- LEFT JOIN produtos p
+
+-- ON c.CódigoDaCategoria = p.códigoDaCategoria
+
+-- WHERE c.`CódigoDaCategoria` = 1 -- ou outro parametro
+
+
+-- (x) SELECT * FROM encomendas WHERE datadaencomenda BETWEEN "1996-07-10" AND "1996-07-17" ORDER BY códigoDoCliente
+
+
+-- (xii) SELECT datadaencomenda FROM encomendas 
+
+-- WHERE códigodocliente = "HANAR"
+
+
+-- (xxi): INSERT INTO produtos VALUES (DEFAULT, "Borracha de desenho", 1, 1, 1, 10, 100, 12, 50, 0)
+
+
+

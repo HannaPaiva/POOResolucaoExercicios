@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import random
 
 class Jogo(ABC):
-    """Implementa uma classe para um jogo com 2 humanos"""
+  
     def __init__(self):
         print('bom jogo ...')
         self.inicializa_tabuleiro()

@@ -1,17 +1,14 @@
-# Importe as classes que você já definiu
+
 from car import Car
 from person import Person
 from engine import Engine
 
 
-# Função para listar pessoas
 def list_persons(persons):
     print("\nLista de Pessoas:")
     for i, person in enumerate(persons, 1):
         print(f"{i}. {person.forename} {person.surname}")
 
-
-# Função para inserir uma nova pessoa
 def new_person(persons):
     forename = input("Nome: ")
     surname = input("Sobrenome: ")
@@ -24,7 +21,6 @@ def new_person(persons):
     print("Nova pessoa adicionada com sucesso!")
 
 
-# Função para remover uma pessoa
 def delete_person(persons):
     list_persons(persons)
     index = int(input("Digite o número da pessoa que deseja apagar: ")) - 1
@@ -35,7 +31,6 @@ def delete_person(persons):
         print("Número de pessoa inválido.")
 
 
-# Função para editar uma pessoa
 def edit_person(persons):
     list_persons(persons)
     index = int(input("Digite o número da pessoa que deseja editar: ")) - 1
@@ -51,7 +46,7 @@ def edit_person(persons):
         print("Número de pessoa inválido.")
 
 
-# Função para salvar a lista de pessoas em um arquivo
+
 def save_persons_to_file(persons, filename="person_list.txt"):
     with open(filename, "w") as file:
         for person in persons:
@@ -59,14 +54,12 @@ def save_persons_to_file(persons, filename="person_list.txt"):
     print(f"Lista de pessoas salva no arquivo: {filename}")
 
 
-# Função para listar carros
 def list_cars(cars):
     print("\nLista de Carros:")
     for i, car in enumerate(cars, 1):
         print(f"{i}. {car.carBrand} {car.carModel} (Proprietário: {car.carOwner})")
 
 
-# Função para inserir um novo carro
 def new_car(cars, persons):
     list_persons(persons)
     owner_index = int(input("Digite o número do proprietário do carro: ")) - 1
@@ -84,7 +77,6 @@ def new_car(cars, persons):
         print("Número de proprietário inválido.")
 
 
-# Função para remover um carro
 def delete_car(cars):
     list_cars(cars)
     index = int(input("Digite o número do carro que deseja apagar: ")) - 1
@@ -94,8 +86,6 @@ def delete_car(cars):
     else:
         print("Número de carro inválido.")
 
-
-# Função para editar um carro
 def edit_car(cars, persons):
     list_cars(cars)
     index = int(input("Digite o número do carro que deseja editar: ")) - 1
@@ -115,7 +105,6 @@ def edit_car(cars, persons):
         print("Número de carro inválido.")
 
 
-# Função para salvar a lista de carros em um arquivo
 def save_cars_to_file(cars, filename="car_list.txt"):
     with open(filename, "w") as file:
         for car in cars:
@@ -123,43 +112,42 @@ def save_cars_to_file(cars, filename="car_list.txt"):
     print(f"Lista de carros salva no arquivo: {filename}")
 
 
-# Função principal
 def main():
     persons = []  # Lista de pessoas
     cars = []  # Lista de carros
 
     while True:
         print("\nMenu:")
-        print("11 - Lista de pessoas")
-        print("12 - Nova pessoa")
-        print("13 - Apagar pessoa")
-        print("14 - Editar pessoa")
-        print("21 - Lista de carros")
-        print("22 - Novo carro")
-        print("23 - Apagar carro")
-        print("24 - Editar carro")
-        print("99 - Gravar em arquivo")
+        print("1 - Lista de pessoas")
+        print("1 - Nova pessoa")
+        print("3 - Apagar pessoa")
+        print("4 - Editar pessoa")
+        print("5 - Lista de carros")
+        print("6 - Novo carro")
+        print("7 - Apagar carro")
+        print("8 - Editar carro")
+        print("9 - Gravar em arquivo")
         print("0 - Sair")
 
         option = input("Escolha uma opção: ")
 
-        if option == "11":
+        if option == "1":
             list_persons(persons)
-        elif option == "12":
+        elif option == "2":
             new_person(persons)
-        elif option == "13":
+        elif option == "3":
             delete_person(persons)
-        elif option == "14":
+        elif option == "4":
             edit_person(persons)
-        elif option == "21":
+        elif option == "5":
             list_cars(cars)
-        elif option == "22":
+        elif option == "6":
             new_car(cars, persons)
-        elif option == "23":
+        elif option == "7":
             delete_car(cars)
-        elif option == "24":
+        elif option == "8":
             edit_car(cars, persons)
-        elif option == "99":
+        elif option == "9":
             save_option = input("Deseja salvar a lista de pessoas em um arquivo? (s/n): ")
             if save_option.lower() == "s":
                 save_persons_to_file(persons)

@@ -11,7 +11,6 @@
 # print(f"O maior número entre [{n1}, {n2}, {n3}] é {maior}")
 
 
-
 # Faça um programa que leia n números e informe a soma e a média destes.
 
 valores = []
