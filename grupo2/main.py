@@ -2,6 +2,7 @@
 from car import Car
 from person import Person
 from engine import Engine
+from color import Color
 
 
 def list_persons(persons):
@@ -88,6 +89,8 @@ def delete_car(cars):
 
 def edit_car(cars, persons):
     list_cars(cars)
+    car_color = Color("Red", 255, 0, 0)
+
     index = int(input("Digite o número do carro que deseja editar: ")) - 1
     if 0 <= index < len(cars):
         car = cars[index]
@@ -95,6 +98,7 @@ def edit_car(cars, persons):
         car.carModel = input("Novo modelo do carro: ")
         car.carConsumption = float(input("Novo consumo do carro (km/l): "))
         car.carKms = float(input("Novos quilômetros do carro: "))
+        car.color = (car_color)
         owner_index = int(input("Digite o número do novo proprietário do carro: ")) - 1
         if 0 <= owner_index < len(persons):
             car.carOwner = persons[owner_index].forename + " " + persons[owner_index].surname
@@ -108,7 +112,7 @@ def edit_car(cars, persons):
 def save_cars_to_file(cars, filename="car_list.txt"):
     with open(filename, "w") as file:
         for car in cars:
-            file.write(f"{car.carBrand},{car.carModel},{car.carConsumption},{car.carKms},{car.carOwner}\n")
+            file.write(f"{car.carBrand},{car.carModel},{car.carConsumption},{car.carKms},{car.carOwner}, {car.color}\n")
     print(f"Lista de carros salva no arquivo: {filename}")
 
 
@@ -119,7 +123,7 @@ def main():
     while True:
         print("\nMenu:")
         print("1 - Lista de pessoas")
-        print("1 - Nova pessoa")
+        print("2 - Nova pessoa")
         print("3 - Apagar pessoa")
         print("4 - Editar pessoa")
         print("5 - Lista de carros")

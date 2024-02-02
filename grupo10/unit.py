@@ -5,7 +5,7 @@ from conta import Conta
 class TestConta(unittest.TestCase):
 
     def setUp(self):
-        self.conta = Conta("mr. teabag", 2, 1000)
+        self.conta = Conta("mr. teabag", 2, 00)
 
     def test_dono(self):
         assert self.conta.dono == "Mr. Teabag"

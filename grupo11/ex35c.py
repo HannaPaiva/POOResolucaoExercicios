@@ -10,7 +10,7 @@ class BoxC(BoxLayout):
 
         self.text_input1 = TextInput(hint_text='Texto 1')
         self.text_input2 = TextInput(hint_text='Texto 2')
-        self.label_result = Label(text='Resultado:', color=(1, 0, 0, 1))  # Cor inicial: vermelha
+        self.label_result = Label(text='Resultado:', color=(1, 0, 0, 1))  
 
         self.add_widget(self.text_input1)
         self.add_widget(self.text_input2)
@@ -36,7 +36,7 @@ class TextApp(App):
         # Criando a interface principal
         box_c = BoxC()
 
-        # Criação da interface final
+    
         root = box_c
 
         return root

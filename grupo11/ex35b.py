@@ -22,10 +22,9 @@ class BoxB(BoxLayout):
 
 class TextApp(App):
     def build(self):
-        # Criando a interface principal
+ 
         box_b = BoxB()
-
-        # Criação da interface final
+   
         root = box_b
 
         return root

@@ -48,10 +48,32 @@ def query_xii(codigo_cliente):
     return execute_query(query, (codigo_cliente,))
 
 
-def query_xxi():
-    query =  "INSERT INTO produtos VALUES (DEFAULT 'Borracha de desenho', 1, 1, 1, 10, 100, 12, 50, 0)"
-    execute_query(query)
-    print("ok")
+
+def query_xxi(nome, codfornecedor, codcategoria, quantidadeunidade, precounitario, existencias, encomendados, existenciaminima, descontinuado):
+    connection = mysql.connector.connect(host='localhost', user='root', password='', database='adamastor')
+    cursor = connection.cursor()
+
+ 
+    query = '''INSERT INTO produtos 
+               VALUES (DEFAULT, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
+    
+    
+    values = (nome, codfornecedor, codcategoria, quantidadeunidade, precounitario, existencias, encomendados, existenciaminima, descontinuado)
+
+    try:
+        cursor.execute(query, values)
+        connection.commit()
+        print("okappa, inseriu")
+    except Exception as e:
+        print(f"Erro ao executar a query: {e}")
+    finally:
+        cursor.close()
+        connection.close()
+
+# Exemplo de chamada da função
+
+
+    
     
 # (xxvi) SELECT min(preçoUnitário) FROM produtos
 def query_xxvi():
@@ -67,7 +89,6 @@ def query_xxx(pais):
 def query_sum_valor_total():
     query = "SELECT CódigoDaEncomenda, SUM(PreçoUnitário * Quantidade) AS ValorTotal FROM detalhes_da_encomenda GROUP BY CódigoDaEncomenda ORDER BY ValorTotal DESC LIMIT 1"
     return execute_query(query)
-
 
 
 if __name__ == "__main__":
@@ -91,7 +112,8 @@ if __name__ == "__main__":
     print("......................................................................")
 
     print('\n(xxi) INSERT INTO produtos:')
-    query_xxi()
+    query_xxi("Broohah", 1, 1, 1, 100, 1, 1, 1, 1)
+   
     print("......................................................................")
 
     print('\n(xxvi) SELECT min(preçoUnitário) FROM produtos:')
